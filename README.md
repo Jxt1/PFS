@@ -15,8 +15,7 @@ If you use or reference this project, please cite the ICDE'26 work above. For re
 
 ## Table of Contents
 - [Project Context (ICDE'26)](#project-context-icde26)
-- [Run](#run)
-- [Linux (MPI) Run](#linux-mpi-run)
+ - [Run](#run)
 - [Environment](#environment)
 - [Input Format](#input-format)
 - [Datasets](#datasets)
@@ -24,17 +23,6 @@ If you use or reference this project, please cite the ICDE'26 work above. For re
 - [License](#license)
 
 > Note: This is a binary-only minimal release for evaluation. Source files and auxiliary artifacts are intentionally not included and will be open-sourced after paper acceptance (ICDE'26).
-
-## Run
-Example:
-```bash
-./bin/pfs -d data.txt -q query.txt -num 100000
-```
-
-Common arguments:
-- `-d`: path to data graph
-- `-q`: path to query graph
-- `-num`: limit the number of enumerated matches (optional)
 
 ## Input Format
 Both data and query graphs are vertex-labeled undirected graphs. A file starts with `t N M`, where `N` is the number of vertices and `M` is the number of edges. Vertex and edge lines are formatted as:
@@ -65,7 +53,7 @@ Notes:
 - Provided for evaluation and research use.
 - Please cite the ICDE'26 paper when using the dataset.
 
-## Linux (MPI) Run
+## Run
 
 ```bash
 # Check MPI version
@@ -75,10 +63,10 @@ mpirun --version
 chmod +x ./bin/pfs
 
 # Single-node run with 4 processes (minimal reproduction)
-mpirun -np 4 ./bin/pfs -d data.txt -q query.txt -num 100000
+mpirun -np 4 ./bin/pfs -d ./examples/data.txt -q ./examples/query.txt -num 100000
 
 # Optional: log output and timing
-time mpirun -np 4 ./bin/pfs -d data.txt -q query.txt -num 100000 | tee pfs_run.log
+time mpirun -np 4 ./bin/pfs -d ./examples/data.txt -q ./examples/query.txt -num 100000 | tee pfs_run.log
 ```
 
 Note: If using MPICH, use `mpiexec` instead of `mpirun`.
