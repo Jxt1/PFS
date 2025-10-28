@@ -41,6 +41,7 @@ run_all_algorithms.sh
 compile_run.sh
 Makefile
 
+release/
 # Keep only README.md and bin/
 !README.md
 !bin/

@@ -16,8 +16,11 @@ If you use or reference this project, please cite the ICDE'26 work above. For re
 ## Table of Contents
 - [Project Context (ICDE'26)](#project-context-icde26)
 - [Run](#run)
+- [Linux (MPI) Run](#linux-mpi-run)
+- [Environment](#environment)
 - [Input Format](#input-format)
 - [Datasets](#datasets)
+- [Results](#results)
 - [License](#license)
 
 > Note: This is a binary-only minimal release for evaluation. Source files and auxiliary artifacts are intentionally not included and will be open-sourced after paper acceptance (ICDE'26).
@@ -25,7 +28,7 @@ If you use or reference this project, please cite the ICDE'26 work above. For re
 ## Run
 Example:
 ```bash
-./bin/pfs -d ./data/data.txt -q ./data/query.txt -num 100000
+./bin/pfs -d data.txt -q query.txt -num 100000
 ```
 
 Common arguments:
@@ -62,5 +65,50 @@ Notes:
 - Provided for evaluation and research use.
 - Please cite the ICDE'26 paper when using the dataset.
 
+## Linux (MPI) Run
+
+```bash
+# Check MPI version
+mpirun --version
+
+# Make executable (if needed)
+chmod +x ./bin/pfs
+
+# Single-node run with 4 processes (minimal reproduction)
+mpirun -np 4 ./bin/pfs -d data.txt -q query.txt -num 100000
+
+# Optional: log output and timing
+time mpirun -np 4 ./bin/pfs -d data.txt -q query.txt -num 100000 | tee pfs_run.log
+```
+
+Note: If using MPICH, use `mpiexec` instead of `mpirun`.
+
+
+## Environment
+```bash
+cat /etc/os-release
+uname -a
+mpirun --version
+gcc --version
+/usr/bin/ldd --version
+ldd ./bin/pfs
+printenv LD_LIBRARY_PATH
+```
+
+Environment snapshot:
+- OS: Ubuntu 18.04.6 LTS (Bionic Beaver).
+- Kernel: Linux mnode22 4.15.0-180-generic x86_64.
+- MPI: Open MPI 5.0.5 (mpirun 5.0.5).
+- Compiler: GCC 9.4.0; glibc: [ENV-PLACEHOLDER-6-glibc].
+- MPI library location: refer to the directory of `libmpi.so.*` as shown by `ldd ./bin/pfs`; ensure that directory is on `LD_LIBRARY_PATH`.
+- Runtime dependencies summary: `libmpi.so.40`, `libopen-pal.so.80`, `libpmix.so.2`, `libevent_*`, `libhwloc.so.15`, and system `libstdc++`, `libc`, `libgcc_s`.
+
+## Results
+Please provide the following after running the minimal commands above:
+
+- [RESULT-PLACEHOLDER-1] Total wall-clock runtime (seconds).
+- [RESULT-PLACEHOLDER-2] MPI configuration (total `-np`, nodes, processes per node).
+- [RESULT-PLACEHOLDER-3] Data/query identifiers and sizes (N vertices, M edges).
+ 
 ## License
 License to be determined. Please choose and add one according to your release policy (e.g., MIT/Apache-2.0).
