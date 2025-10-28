@@ -99,16 +99,9 @@ Environment snapshot:
 - OS: Ubuntu 18.04.6 LTS (Bionic Beaver).
 - Kernel: Linux mnode22 4.15.0-180-generic x86_64.
 - MPI: Open MPI 5.0.5 (mpirun 5.0.5).
-- Compiler: GCC 9.4.0; glibc: [ENV-PLACEHOLDER-6-glibc].
+- Compiler: GCC 9.4.0; glibc: 2.31.
 - MPI library location: refer to the directory of `libmpi.so.*` as shown by `ldd ./bin/pfs`; ensure that directory is on `LD_LIBRARY_PATH`.
 - Runtime dependencies summary: `libmpi.so.40`, `libopen-pal.so.80`, `libpmix.so.2`, `libevent_*`, `libhwloc.so.15`, and system `libstdc++`, `libc`, `libgcc_s`.
 
-## Results
-Please provide the following after running the minimal commands above:
-
-- [RESULT-PLACEHOLDER-1] Total wall-clock runtime (seconds).
-- [RESULT-PLACEHOLDER-2] MPI configuration (total `-np`, nodes, processes per node).
-- [RESULT-PLACEHOLDER-3] Data/query identifiers and sizes (N vertices, M edges).
- 
 ## License
 License to be determined. Please choose and add one according to your release policy (e.g., MIT/Apache-2.0).
