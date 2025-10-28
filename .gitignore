@@ -1,0 +1,47 @@
+## Binary-only release: exclude sources and non-core assets
+
+# Source files (do not upload)
+*.c
+*.cc
+*.cpp
+*.cxx
+*.h
+*.hpp
+intersection_algos.hpp
+
+# Build outputs
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.exe
+main
+
+# Python and caches
+*.py
+__pycache__/
+*.pyc
+
+# Logs and results
+logs/
+results/
+*.log
+
+# Figures and paper artifacts
+figures/
+paper_figures/
+
+# Temp
+tmp/
+
+# Misc
+move_mapping.csv
+run_all_algorithms.sh
+compile_run.sh
+Makefile
+
+# Keep only README.md and bin/
+!README.md
+!bin/
+!bin/pfs
