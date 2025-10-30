@@ -83,13 +83,20 @@ ldd ./bin/pfs
 printenv LD_LIBRARY_PATH
 ```
 
-Environment snapshot:
+pfs Environment snapshot:
 - OS: Ubuntu 18.04.6 LTS (Bionic Beaver).
 - Kernel: Linux mnode22 4.15.0-180-generic x86_64.
 - MPI: Open MPI 5.0.5 (mpirun 5.0.5).
 - Compiler: GCC 9.4.0; glibc: 2.31.
 - MPI library location: refer to the directory of `libmpi.so.*` as shown by `ldd ./bin/pfs`; ensure that directory is on `LD_LIBRARY_PATH`.
 - Runtime dependencies summary: `libmpi.so.40`, `libopen-pal.so.80`, `libpmix.so.2`, `libevent_*`, `libhwloc.so.15`, and system `libstdc++`, `libc`, `libgcc_s`.
+
+pfs2 Environment snapshot:
+- CPU: AMD Ryzen 7 5800H with Radeon Graphics (8 cores, 16 threads)
+- OS: Ubuntu Ubuntu 22.04.3 LTS (Jammy Jellyfish).
+- Kernel:  Linux 6.6.87.2-microsoft-standard-WSL2 x86_64.
+- MPI: Open MPI 4.1.2 (mpirun 4.1.2).
+- Compiler: GCC 12.3.0; glibc: 2.35.
 
 ## License
 License to be determined. Please choose and add one according to your release policy (e.g., MIT/Apache-2.0).
