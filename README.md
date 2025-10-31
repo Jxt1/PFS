@@ -53,6 +53,18 @@ Notes:
 - Provided for evaluation and research use.
 - Please cite the ICDE'26 paper when using the dataset.
 
+## Docker Quick Start
+The easiest way to run PFS is using our pre-built Docker image:
+```bash
+# Pull the Docker image
+docker pull woolee081/pfs:latest
+
+# Run the container
+docker run -it woolee081/pfs:latest
+
+# Run PFS
+mpirun -np 4 ./bin/pfs -d ./examples/data.txt -q ./examples/query.txt -num 100000
+```
 ## Run
 
 ```bash
