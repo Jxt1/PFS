@@ -19,8 +19,6 @@ If you use or reference this project, please cite the ICDE'26 work above. For re
 - [Environment](#environment)
 - [Input Format](#input-format)
 - [Datasets](#datasets)
-- [Results](#results)
-- [License](#license)
 
 > Note: This is a binary-only minimal release for evaluation. Source files and auxiliary artifacts are intentionally not included and will be open-sourced after paper acceptance (ICDE'26).
 
@@ -109,6 +107,3 @@ pfs2 Environment snapshot:
 - Kernel:  Linux 6.6.87.2-microsoft-standard-WSL2 x86_64.
 - MPI: Open MPI 4.1.2 (mpirun 4.1.2).
 - Compiler: GCC 12.3.0; glibc: 2.35.
-
-## License
-License to be determined. Please choose and add one according to your release policy (e.g., MIT/Apache-2.0).
